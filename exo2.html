@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head> <title>Exercice 2</title> </head>
+<body>
+<h2>Exercice 2</h2>
+<i>ABC est-il un triangle rectangle ?</i>
+
+<p>Longueur AB :</p>
+<input type="text" name="ab" id="ab" value="">
+
+<p>Longueur AC :</p>
+<input type="text" name="ac" id="ac" value="">
+
+<p>Longueur BC :</p>
+<input type="text" name="bc" id="bc" value="">
+
+</br></br><input type="button" value="Valider" onclick="hyp()" />
+
+<p id='resultat'></p>
+
+<script>
+function hyp()
+{
+  var ab,ac,bc;
+  ac=document.getElementById("ac").value;
+  ac=parseFloat(ac);
+  ab=document.getElementById("ab").value;
+  ab=parseFloat(ab);
+  bc=document.getElementById("bc").value;
+  bc=parseFloat(bc);
+
+  if ((ac**2+ab**2)==bc**2) {
+    document.getElementById('resultat').innerHTML="ABC est rectangle en A";
+  } else if ((ab**2+bc**2)==ac**2) {
+    document.getElementById('resultat').innerHTML="ABC est rectangle en B";
+  } else if ((ac**2+bc**2)==ab**2) {
+    document.getElementById('resultat').innerHTML="ABC est rectangle en C";
+  } else {
+    document.getElementById('resultat').innerHTML="ABC n'est pas rectangle";
+  }
+}
+</script>
+<br><br>
+<p><a href="site_java.html">Retour au menu des exercices</a>
+<p><a href="site_ines.html">Retour à Coffee Wall of Fame</a></p>
+
+</body>
+</html>

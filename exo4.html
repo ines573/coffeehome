@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exo 4</title>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+<h1>Exercice 4 : jeu du plus ou du moins</h1>
+<!---<>--->
+<p>Entrez un entier entre 1 et 100 :</p>
+<input type='text' id='intt'>
+<input type='button' value='Valider' onclick='jeu()'>
+<p id='resultat'>Comparaison :</p>
+
+<script>
+	var nb=Math.floor(Math.random()*100), intt=document.getElementById('intt').value;
+	function jeu(){
+	intt=document.getElementById('intt').value; <!--tres important-->
+	if(nb==intt) {
+	document.getElementById('resultat').innerHTML='Bravo, vous avez trouvé';
+	}
+	else if(nb<intt) {
+	document.getElementById('resultat').innerHTML='Le nombre à deviner est plus petit'; }
+	else {
+	document.getElementById('resultat').innerHTML='Le nombre à deviner est plus grand';
+	}
+	}
+</script>
+<br><br>
+<p><a href="site_java.html">Retour au menu des exercices</a>
+<p><a href="site_ines.html">Retour à Coffee Wall of Fame</a></p>
+</body>
+</html>

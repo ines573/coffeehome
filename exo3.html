@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>Exo 3</title>
+</head>
+
+<body>
+<h1>Exercice 3 : détection de 'e'</h1>
+
+<!---<>--->
+
+<p>Entrez une chaîne de caractères :</p>
+<input type='text' id='C'>
+<input type='button' value='Valider' onclick='compte()'>
+
+<p id='resultat'>Nombre de 'e' :</p>
+
+<script>
+var compteur=0, C=document.getElementById('C'), longu=C.length;
+function compte() {
+C=document.getElementById('C').value;
+longu=C.length;
+compteur=0;
+
+	for(var N=0 ; N<longu; N=N+1) {
+		if(C.charAt(N)=='e') {
+		
+			compteur+=1;
+		};
+	}
+	document.getElementById('resultat').innerHTML='Il y a '+compteur+' "e" dans votre phrase';
+}
+</script>
+<br><br>
+<p><a href="site_java.html">Retour au menu des exercices</a>
+<p><a href="site_ines.html">Retour à Coffee Wall of Fame</a></p>
+</body>
+</html>

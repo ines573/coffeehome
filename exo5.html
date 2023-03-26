@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Exercice 5</title>
+</head>
+
+<style>
+	score {
+		text-align: center;
+		color:red;
+		font-style:italic;
+	}
+	repo {
+		color:blue;
+		font-weight:bold;
+	}
+</style>
+
+<body>
+	<h2>Exercice 5</h2>
+	<i>Quiz : les bases de nombres</i>
+	<form id="quiz">
+	<br>
+	<!-- Question 1 -->
+		<h3>Question 1</h3>
+			<p>Comment fait-on pour déterminer la place que prendra un entier n en mémoire ?</p>
+			<select id="choix" name="lang">
+				<option value="no"> Sélectionner... </option>
+				<option value="hash"> On le passe sous une fonction Hash </option>
+				<option value="bin"> On le convertit en binaire </option>
+				<option value="log"> On fait un logarithme en base 2 de n </option>
+			</select>
+			
+			<input type="button" value="Valider" onclick="selection()">
+<repo><p id='resultat1'></p></repo>
+<br>
+
+<!-- Question 2 -->
+
+	<h3>Question 2</h3>
+			<p>La base 16 (hexadécimale) utilise les caractères suivants : 123456789ABCDEF</p>
+				
+			<input type="button" value="Vrai" onclick="vrai()">
+			<input type="button" value="Faux" onclick="faux()">
+
+<repo><p id='resultat2'></p></repo>
+<br>
+
+<!-- Question 3 -->
+
+	<h3>Question 3</h3>
+				<p>Convertissez le nombre 1001101 (base 2) en un nombre de base 10.</p>
+				<input type="text" id="reponse_trois" value="">
+
+<input type="button" value="Valider" onclick="trois()" />
+<repo><p id='resultat3'></p></repo>
+<br>
+
+<!-- Soumission -->
+<br><br>
+<input type="button" value="Soumettre le quiz" onclick="soumissionQuiz()">
+<score id='score'></score>
+
+
+<script>
+
+	// Question 1
+	
+	function selection() {
+		var selecteur = document.getElementById("choix").value;
+		if (selecteur == "log") {
+			document.getElementById('resultat1').innerHTML = "Bonne réponse !";
+		} else if (selecteur == "no") {
+			document.getElementById('resultat1').innerHTML = "Veuillez sélectionner un élement de réponse";
+		} else {
+			document.getElementById('resultat1').innerHTML = "Mauvaise réponse...";
+		}
+	}
+
+	// Question 2
+var bonneRep;
+
+	function vrai() {
+		document.getElementById('resultat2').innerHTML = "Mauvaise réponse ! Il manque le caractère '0'.";
+		bonneRep=false;
+	}
+	function faux() {
+		document.getElementById('resultat2').innerHTML = "Bonne réponse ! Il manque le caractère '0'.";
+		bonneRep=true;
+
+	}
+
+	// Question 3
+
+function trois() {
+	var rep=document.getElementById("reponse_trois").value;
+	if (rep=='77') {
+		document.getElementById('resultat3').innerHTML = "Bonne réponse !";
+	 }
+	 else {
+	 	document.getElementById('resultat3').innerHTML = "Mauvaise réponse ! On a ici 1 * 2^6 + 0 * 2^5 + 0 * 2^4 + 1 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 77";
+
+	 } 
+}
+
+	// Soumission du quiz
+
+function soumissionQuiz() {
+			var selecteur = document.getElementById("choix").value;
+			var totalScore = 0;
+			var rep = document.getElementById("reponse_trois").value;
+			if (selecteur == "log") {
+				totalScore += 1;
+			}
+			if (bonneRep) {
+				totalScore += 1;
+			}
+			if (rep=='77') {
+				totalScore += 1;
+			}
+			document.getElementById("score").innerHTML = "Votre score final est de " + totalScore + " sur 3.";
+		}
+</script>
+<br><br>
+<p><a href="site_java.html">Retour au menu des exercices</a>
+<p><a href="site_ines.html">Retour à Coffee Wall of Fame</a></p>
+</form>
+</body>
+</html>
